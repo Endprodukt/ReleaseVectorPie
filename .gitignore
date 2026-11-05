@@ -1,0 +1,13 @@
+# builds
+build/
+build-*/
+!release-vp/tools/build-on-cabinet.sh
+
+# not ours to publish, or too big: the APK, the SDK, Malban's Vectrex sources
+*.apk
+VectorPie/
+VRelease/
+VRelease.txt
+
+# listening previews made by tools/loop_music.py / the seam test
+/*.wav
