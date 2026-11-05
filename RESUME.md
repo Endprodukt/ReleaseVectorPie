@@ -13,6 +13,13 @@ Read `STATUS.md` first (state, limitations, tasks), then `release-vp/README.md` 
 - Pi and Windows .exe builds need the SDK's `tools/setup-wsl.sh`, which only runs on Debian 13:
   not set up yet.
 
+## Repository
+
+`F:\Release Game` is the git repository https://github.com/Endprodukt/ReleaseVectorPie (private,
+branch `main`; created 2026-11-05). `.gitignore` leaves out the APK, the SDK (`VectorPie/`),
+Malban's `VRelease/` and the preview WAVs. `README.md` is the project's overview (English),
+`release-vp/README.md` the developer notes. Commit and push only when the user asks.
+
 ## Building for and loading onto the cabinet
 
 Short way: bump `version` in `release-vp/package/game.ini`, then
