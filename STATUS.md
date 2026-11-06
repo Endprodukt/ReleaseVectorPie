@@ -157,6 +157,16 @@ from its start once to 68.80 s, then bars 16..32 (33.8832 .. 68.8003) loop. Init
 was silent before. The original's "opening" is no longer used (removed from the assets).
 Previews: `F:\Release Game\attract_preview.wav`, `entry_preview.wav`.
 
+v0.5.7 (on the cabinet 2026-11-06): built on SDK 3c5d85e ("games follow the menu's music and
+sound volumes; every frame starts with a dark move"; F:\Release Game\VectorPie pulled, the WSL
+SDK rebuilt and installed). The SDK multiplies music (our stream too) and effects by the menu's
+MUSIC / SOUND VOLUME; the game's own SOUND page (shared cabinet convention) stays as a trim on
+top, 100 % = as the menu says. KNOWN: the SDK reads `/home/pi/vectorpiemenu/vector_pie_menu.cfg`,
+but on this cabinet the menu's file is `/usr/local/share/advance/vector_pie_menu.cfg`, so the menu
+volumes do not reach the games yet (both full). An SDK bug (the user confirmed it with the SDK's
+side on 2026-11-06); nothing to change in the game, a later SDK update fixes it after a rebuild. Its [audio] says music_volume 0, effects_volume
+50: once read, the game music would be silent and the effects half as loud.
+
 High scores are seeded on the original's scale, top 4000 (END 4000, NMA 3400, MIO 2900, MAL
 2400, VTK 2000, GMO 1600, TOM 1300, ALX 1000, VEC 700, PIE 400); entries seeded by earlier
 versions are replaced on start, players' own entries are kept (OLI 2906 on the cabinet). On the cabinet the

@@ -2252,6 +2252,9 @@ static void settings_path(char *buf, size_t size)
     snprintf(buf, size, "%s/settings.ini", vp_save_dir());
 }
 
+/* The service menu's volumes are the game's own trim: since SDK 3c5d85e the
+ * SDK also mixes music and effects at the VectorPie menu's MUSIC and SOUND
+ * VOLUME (its MASTER is the system's), so 100 % here plays as the menu says. */
 static void apply_sound(void)
 {
     if (!G.audio) return;

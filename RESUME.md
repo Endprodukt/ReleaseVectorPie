@@ -20,6 +20,11 @@ branch `main`; created 2026-11-05). `.gitignore` leaves out the APK, the SDK (`V
 Malban's `VRelease/` and the preview WAVs. `README.md` is the project's overview (English),
 `release-vp/README.md` the developer notes. Commit and push only when the user asks.
 
+A GitHub release: the package the cabinet built (`~/release-build/build-game/release-<v>.vpk`,
+copied with scp), a tag `v<v>` on the commit it was built from, `gh release create` with the
+.vpk attached and English notes (install from a USB drive's `games/` folder via INSTALL GAMES;
+the SHA-256). Publishing needs the user's go-ahead each time.
+
 ## Building for and loading onto the cabinet
 
 Short way: bump `version` in `release-vp/package/game.ini`, then
