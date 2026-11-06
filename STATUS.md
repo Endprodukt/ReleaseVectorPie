@@ -167,6 +167,12 @@ volumes do not reach the games yet (both full). An SDK bug (the user confirmed i
 side on 2026-11-06); nothing to change in the game, a later SDK update fixes it after a rebuild. Its [audio] says music_volume 0, effects_volume
 50: once read, the game music would be silent and the effects half as loud.
 
+v0.5.8 (on the cabinet 2026-11-06): built on SDK 065d93a, which reads the menu's volumes from
+`/usr/local/share/advance/vector_pie_menu.cfg`: the bug noted at v0.5.7 is fixed, the menu's
+MUSIC / SOUND VOLUME now reach the game. When installed the menu said music_volume 0 and
+effects_volume 50, so the game's music is silent and its effects half as loud until those are
+raised in the VectorPie menu.
+
 High scores are seeded on the original's scale, top 4000 (END 4000, NMA 3400, MIO 2900, MAL
 2400, VTK 2000, GMO 1600, TOM 1300, ALX 1000, VEC 700, PIE 400); entries seeded by earlier
 versions are replaced on start, players' own entries are kept (OLI 2906 on the cabinet). On the cabinet the
