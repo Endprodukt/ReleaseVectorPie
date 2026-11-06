@@ -35,8 +35,9 @@ What the VectorPie version adds:
   demo game.
 - High scores with initials (one button plus START, with a visible countdown), seeded with a
   default table.
-- The original's music and sounds, plus "Starship 8-Bit" as the game music, each looping
-  seamlessly after playing once from the start.
+- Music: "Starship 8-Bit" in the game, parts of "Retro-Futurist Space" on the attract pages
+  and for the initials, each looping seamlessly (the long ones after playing once from the
+  start); the original's sound effects.
 - The cabinet's shared service menu (style, attract sound, high score reset, button layout,
   volumes).
 - Every frame is kept light for the USB-DVG: scattered dots are drawn in a short path so the
@@ -97,11 +98,11 @@ the vector board (`SIM_LINES=1`, `SIM_COST=1`). See [`release-vp/README.md`](rel
 
 ## Credits
 
-- **Release** (the original game, its sounds, title music and font): Gimogames.
+- **Release** (the original game, its sounds and font): Gimogames.
 - **Vectrex version**: Malban, public domain; ported with his permission.
 - **VectorPie SDK**: Goldfinch2.
-- **"Starship 8-Bit"** (the game music): chosen by Endprodukt; its rights stay with its author
-  and are not covered by this repository.
+- **"Starship 8-Bit"** and **"Retro-Futurist Space"** (the music): chosen by Endprodukt; their
+  rights stay with their authors and are not covered by this repository.
 - **VectorPie version**: Endprodukt.
 
 No license is granted for this repository: all rights reserved.

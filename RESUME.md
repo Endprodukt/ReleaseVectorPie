@@ -15,7 +15,7 @@ Read `STATUS.md` first (state, limitations, tasks), then `release-vp/README.md` 
 
 ## Repository
 
-`F:\Release Game` is the git repository https://github.com/Endprodukt/ReleaseVectorPie (private,
+`F:\Release Game` is the git repository https://github.com/Endprodukt/ReleaseVectorPie (public since 2026-11-05,
 branch `main`; created 2026-11-05). `.gitignore` leaves out the APK, the SDK (`VectorPie/`),
 Malban's `VRelease/` and the preview WAVs. `README.md` is the project's overview (English),
 `release-vp/README.md` the developer notes. Commit and push only when the user asks.

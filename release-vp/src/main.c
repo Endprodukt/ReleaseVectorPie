@@ -2155,13 +2155,14 @@ static void make_sounds(void)
         G.s_gameover = s;
 }
 
-/* The music: the original's "opening" on the title pages, "Starship 8-Bit"
- * in the game, none while the game is over. Changed with a short fade.
+/* The music: parts of "Retro-Futurist Space" on the attract pages and for
+ * the initials, "Starship 8-Bit" in the game, none while a game is over
+ * (both the owner's choice). Changed with a short fade.
  * Each track plays from its start once, then loops from its loop point to
  * its end (the end is blended into the audio before the loop point, see
  * tools/loop_music.py --intro). vp_music_play loops only whole files, so the
  * game decodes the Oggs at start (the SDK's stb_vorbis) and streams them. */
-enum { MUSIC_NONE, MUSIC_TITLE, MUSIC_GAME };
+enum { MUSIC_NONE, MUSIC_TITLE, MUSIC_GAME, MUSIC_ENTRY, MUSIC_TRACKS };
 
 int stb_vorbis_decode_filename(const char *filename, int *channels, int *sample_rate, short **output);
 
@@ -2170,16 +2171,17 @@ static struct {
     float loop_s;                       /* the loop point, seconds */
     short *pcm;                         /* stereo frames, or 0: played with vp_music_play */
     int frames, rate, loop;
-} music[3] = {
-    [MUSIC_TITLE] = { "assets/sounds/opening.ogg", 0.9451f },
+} music[MUSIC_TRACKS] = {
+    [MUSIC_TITLE] = { "assets/sounds/attract.ogg", 33.8832f },  /* the song from its start, bars 16..32 again */
     [MUSIC_GAME]  = { "assets/sounds/starship.ogg", 16.4980f },
+    [MUSIC_ENTRY] = { "assets/sounds/entry.ogg", 0.0f },        /* bars 6..14, looped whole */
 };
 static int music_pos;                   /* the next frame to write */
 
 static void music_load(void)
 {
     char path[1024];
-    for (int t = MUSIC_TITLE; t <= MUSIC_GAME; t++) {
+    for (int t = MUSIC_TITLE; t < MUSIC_TRACKS; t++) {
         int ch, rate;
         short *pcm;
         int n = stb_vorbis_decode_filename(vp_asset_path(music[t].file, path, sizeof path), &ch, &rate, &pcm);
@@ -2522,7 +2524,8 @@ static void update(vp_game *g, float dt)
      * original's game (the Vectrex game has its own) */
     if (G.state != ST_MENU && !(G.state == ST_PLAY && !G.fx)) bg_update();
     music_want(G.state == ST_PLAY && !G.demo ? MUSIC_GAME :
-               (G.state == ST_GAMEOVER && !G.demo) || G.state == ST_ENTRY ? MUSIC_NONE :
+               G.state == ST_ENTRY ? MUSIC_ENTRY :
+               G.state == ST_GAMEOVER && !G.demo ? MUSIC_NONE :
                in_attract() && !G.set.attract_sound ? MUSIC_NONE : MUSIC_TITLE);
     music_feed();
     lamps_update();

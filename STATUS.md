@@ -1,4 +1,4 @@
-# Status — Release for VectorPie
+# Status â€” Release for VectorPie
 
 Last updated: 2026-11-05
 
@@ -148,6 +148,14 @@ NOT verified on the monitor yet whether the twitch is gone.
 v0.5.5 (on the cabinet 2026-11-05): initials entry shows its time (30 s, ENTRY_TIMEOUT): a bar
 shrinking to the middle with the seconds under it, green, yellow from 10 s, red and blinking in
 the last 5 s, which also tick (the star sound, low).
+
+v0.5.6 (on the cabinet 2026-11-06): new music
+from the owner's "Retro-Futurist Space" (C:\Users\ocare\Downloads, 79.9 s, 110 bpm, bar
+2.18182 s from 1.1559 s). Attract pages (MUSIC_TITLE, `assets/sounds/attract.ogg`): the song
+from its start once to 68.80 s, then bars 16..32 (33.8832 .. 68.8003) loop. Initials entry
+(new MUSIC_ENTRY, `assets/sounds/entry.ogg`): bars 6..14 (12.0650 .. 29.6019) looped whole; it
+was silent before. The original's "opening" is no longer used (removed from the assets).
+Previews: `F:\Release Game\attract_preview.wav`, `entry_preview.wav`.
 
 High scores are seeded on the original's scale, top 4000 (END 4000, NMA 3400, MIO 2900, MAL
 2400, VTK 2000, GMO 1600, TOM 1300, ALX 1000, VEC 700, PIE 400); entries seeded by earlier
